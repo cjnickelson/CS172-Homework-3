@@ -9,10 +9,6 @@ using namespace std;
 
 int main()
 {
-	string word = "GreenwhichMeanTime";
-	string sortedWord = sort(word);
-	cout << sortedWord << endl;
-	
 	Fan f1, f2;
 
 	f1.setRadius(10);
@@ -36,15 +32,21 @@ int main()
 
 	double discriminant = e.getDiscriminant();
 	if (discriminant < 0)
-		cout << "The equation has no real roots." << endl;
+		cout << "The equation has no real roots." << endl<<endl;
 	else if (discriminant == 0)
-		cout << "Repeated root is " << e.getRoot1() << "." << endl;
+		cout << "Repeated root is " << e.getRoot1() << "." << endl<<endl;
 	else
-		cout << "Roots are " << e.getRoot1() << " and " << e.getRoot2() << "." << endl;
+		cout << "Roots are " << e.getRoot1() << " and " << e.getRoot2() << "." << endl<<endl;
 
 	EvenNumber n(16);
 
-	cout << "Even number is 16. The previous even number is " << n.getPrevious() << " and the next even number is " << n.getNext() << "." << endl;
+	cout << "Even number is 16. The previous even number is " << n.getPrevious() << " and the next even number is " << n.getNext() << "." << endl<<endl;
+
+	string word;
+	cout << "Enter a word to be sorted alphabetically." << endl;
+	cin >> word;
+	string sortedWord = sort(word);
+	cout << sortedWord << endl;
 
 	return 0;
 }
@@ -67,4 +69,6 @@ string sort(string& s)
 			}
 		}
 	}
+
+	return s;
 }
