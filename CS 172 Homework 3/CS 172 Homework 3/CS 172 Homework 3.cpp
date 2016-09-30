@@ -55,7 +55,7 @@ int main()
 	EvenNumber n(16);
 
 	// display the number using the get function, and the next and previous ones using those functions
-	cout << "Even number is 16. The previous even number is " << n.getPrevious() << " and the next even number is " << n.getNext() << "." << endl<<endl;
+	cout << "An even number is 16. The previous even number is " << n.getPrevious() << " and the next even number is " << n.getNext() << "." << endl<<endl;
 
 	string word;
 	cout << "Enter a word to be sorted alphabetically." << endl;
@@ -71,15 +71,50 @@ int main()
 	bool even = num.isEven();
 	bool odd = num.isOdd();
 	bool prime = num.isPrime();
+
+	// print the results
+	cout << "The number 24 is " << (even == true ? "" : "not ") << "even, is " << (odd == true ? "" : "not ") << "odd, and is " << (prime == true ? "" : "not ") << "prime." << endl;
+
+	// check a user entry using the int parameter overload
 	int entry;
 	cout << "Enter an integer to check for even odd or prime characteristics." << endl;
 	cin >> entry;
-	bool evenEntry = num.isEven(entry);
-	bool oddEntry = num.isOdd(entry);
-	bool primeEntry = num.isPrime(entry);
-	bool evenInteger = num.isEven(num);
-	bool oddInteger = num.isOdd(num);
-	bool primeInteger = num.isPrime(num);
+	bool evenEntry = MyInteger::isEven(entry);
+	bool oddEntry = MyInteger::isOdd(entry);
+	bool primeEntry = MyInteger::isPrime(entry);
+
+	// show the results
+	cout<< entry<<" is " << (evenEntry == true ? "" : "not ") << "even, is " << (oddEntry == true ? "" : "not ") << "odd, and is " << (primeEntry == true ? "" : "not ") << "prime." << endl;
+
+	// do a third value assigning it to a new object in the MyInteger class and test it using the MyInteger parameter overload
+	cout << "Enter another value for testing" << endl;
+	int input;
+	cin >> input;
+	MyInteger second(input);
+	bool evenInteger = MyInteger::isEven(second);
+	bool oddInteger = MyInteger::isOdd(second);
+	bool primeInteger = MyInteger::isPrime(second);
+	
+	//display these results
+	cout << input <<" is " << (evenInteger == true ? "" : "not ") << "even, is " << (oddInteger == true ? "" : "not ") << "odd, and is " << (primeInteger == true ? "" : "not ") << "prime." << endl;
+
+	// check and display if entry was equal to MyInteger value 24
+	bool equivalent = num.equals(entry);
+
+	cout << "Your first entry is " << (equivalent == true ? "" : "not ") << "equal to 24." << endl;
+
+	// Check if first entry value in int form is equal to second entry in MyInteger form
+	bool same = num.equals(second, entry);
+
+	cout << "Your second entry is " << (same == true ? "" : "not ") << "equal to your first entry." << endl;
+
+	// convert a user word to an int using the function
+	string word2;
+	cout << "Enter a word to be converted to an integer." << endl;
+	cin >> word2;
+	int result = MyInteger::parseInt(word2);
+
+	cout << "Your word in integer form is " << result << "." << endl;
 
 	return 0;
 }

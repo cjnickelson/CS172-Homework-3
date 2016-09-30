@@ -84,7 +84,7 @@ bool  MyInteger::isPrime(int n)
 bool  MyInteger::isEven(const MyInteger&a)
 {
 	// same as above, using the static variable total rather than a member variable
-	if (total % 2 == 0)
+	if (a.value % 2 == 0)
 		return true;
 	else
 		return false;
@@ -93,7 +93,7 @@ bool  MyInteger::isEven(const MyInteger&a)
 bool  MyInteger::isOdd(const MyInteger&a)
 {
 	// same as above, using the static variable total rather than a member variable
-	if (total % 2 == 1)
+	if (a.value % 2 == 1)
 		return true;
 	else
 		return false;
@@ -102,11 +102,11 @@ bool  MyInteger::isOdd(const MyInteger&a)
 bool  MyInteger::isPrime(const MyInteger&a)
 {
 	// same as above, using the static variable total rather than a member variable
-	double max = sqrt(total);
+	double max = sqrt(a.value);
 	bool test = true;
 	for (int i = 2; i <= max; i++)
 	{
-		if (total%i == 0)
+		if (a.value%i == 0)
 		{
 			test = false;
 			break;
@@ -124,14 +124,16 @@ bool  MyInteger::equals(int n)const
 		return false;
 }
 
-bool  MyInteger::equals(const MyInteger& a)const
+// check if value in the object is the same as the int value
+bool  MyInteger::equals(const MyInteger&, int a)const
 {
-	if (value == total)
+	if (value == a)
 		return true;
 	else 
 		return false;
 }
 
+// use a loop to add the value of each character to the sum and return it
 int  MyInteger::parseInt(const string& s)
 {
 	int sum = 0;

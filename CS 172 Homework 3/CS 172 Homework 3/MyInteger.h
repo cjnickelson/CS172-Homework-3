@@ -11,13 +11,9 @@ class MyInteger
 
 public:
 
-	static int total;
-
 	MyInteger(int n)
 	{
-		total = 0;
 		value = n;
-		total += n;
 	}
 
 	int getValue()const;
@@ -31,7 +27,7 @@ public:
 	static bool isOdd(const MyInteger&);
 	static bool isPrime(const MyInteger&);
 	bool equals(int)const;
-	bool equals(const MyInteger&)const;
+	bool equals(const MyInteger&,int)const;
 	static int parseInt(const string&);
 
 };
