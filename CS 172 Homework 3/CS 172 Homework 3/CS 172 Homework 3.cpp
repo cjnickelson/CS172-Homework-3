@@ -66,6 +66,7 @@ int main()
 	string sortedWord = sort(word);
 	cout << sortedWord << endl;
 
+	// create an integer and test all of the functions to see if they output the correct analyses
 	MyInteger num(24);
 	bool even = num.isEven();
 	bool odd = num.isOdd();
@@ -83,24 +84,28 @@ int main()
 	return 0;
 }
 
+// sorting a string alphabetically
 string sort(string& s)
 {
+	// beginning with the first character in the string, and progressing to the end, convert each letter to lowercase
 	for (int i = 0; i < s.length(); i++)
 		s[i] = tolower(s[i]);
+	// begin with the first letter location in the string. call this "low"
 	for (int i = 0; i < s.length(); i++)
 	{
 		int low = s[i];
+		// progress rightward from the point at i, and if you ever encounter a letter which comes before "low", switch spots with the current "low" position
 		for (int j = i+1; j < s.length(); j++)
 		{
 			if (s[j] < low)
 			{
 				low = s[j];
-				int temp = s[j];
 				s[j] = s[i];
-				s[i] = temp;
+				s[i] = low;
 			}
 		}
 	}
+	// as the outer for loop ends, it advances to the next poistion in the string, and checks each rightward value again, thus sorting the string from left to right
 
 	return s;
 }
