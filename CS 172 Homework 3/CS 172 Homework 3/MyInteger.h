@@ -15,7 +15,9 @@ public:
 
 	MyInteger(int n)
 	{
+		total = 0;
 		value = n;
+		total += n;
 	}
 
 	int getValue()const;
