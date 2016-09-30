@@ -69,7 +69,7 @@ bool  MyInteger::isPrime(int n)
 
 bool  MyInteger::isEven(const MyInteger&)
 {
-	if (value % 2 == 0)
+	if (total % 2 == 0)
 		return true;
 	else
 		return false;
@@ -77,25 +77,47 @@ bool  MyInteger::isEven(const MyInteger&)
 
 bool  MyInteger::isOdd(const MyInteger&)
 {
-
+	if (total % 2 == 1)
+		return true;
+	else
+		return false;
 }
 
 bool  MyInteger::isPrime(const MyInteger&)
 {
-
+	double max = sqrt(total);
+	int test = 0;
+	for (int i = 2; i <= max; i++)
+	{
+		if (total%i == 0)
+		{
+			test = 1;
+			break;
+		}
+	}
+	return(test = 1 ? false : true);
 }
 
-bool  MyInteger::equals(int)const
+bool  MyInteger::equals(int n)const
 {
-
+	if (value == n)
+		return true;
+	else
+		return false;
 }
 
 bool  MyInteger::equals(const MyInteger&)const
 {
-
+	if (value == total)
+		return true;
+	else 
+		return false;
 }
 
-int  MyInteger::parseInt(const string&)
+int  MyInteger::parseInt(const string& s)
 {
-
+	int sum = 0;
+	for (int i = 0; i < s.length(); i++)
+		sum += static_cast<int>(s[i]);
+	return sum;
 }

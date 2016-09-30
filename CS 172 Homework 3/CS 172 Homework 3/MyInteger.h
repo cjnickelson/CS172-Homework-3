@@ -11,6 +11,8 @@ class MyInteger
 
 public:
 
+	static int total;
+
 	MyInteger(int n)
 	{
 		value = n;
