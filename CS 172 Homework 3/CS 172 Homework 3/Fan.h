@@ -29,3 +29,19 @@ public:
 	void setRadius(int temprad);
 
 };
+
+/*
+             UML Diagram
+___________________________________
+- int speed
+- bool on
+- double radius
+___________________________________
++ int getSpeed()
++ void setSpeed(int tempspeed)
++ bool getOn()
++ void setOn(bool tempstatus)
++ double getRadius()
++ void setRadius(int temprad)
+___________________________________
+*/

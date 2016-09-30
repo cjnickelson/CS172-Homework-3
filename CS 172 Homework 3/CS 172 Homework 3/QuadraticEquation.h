@@ -22,3 +22,19 @@ public:
 	double getB();
 	double getC();
 };
+
+/*
+         UML Diagram
+________________________________
+- double a
+- double b
+- double c
+________________________________
++ double getDiscriminant
++ double getRoot1()
++ double getRoot2()
++ doubel getA()
++ double getB
++ double getC()
+________________________________
+*/

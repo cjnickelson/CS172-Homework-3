@@ -24,3 +24,15 @@ public:
 	void setValue(int);
 
 };
+
+/*
+          UML Diagram
+___________________________________
+- int value
+___________________________________
++ int getValue()
++ int getNext()
++ int getPrevious()
++ void setValue(int)
+___________________________________
+*/

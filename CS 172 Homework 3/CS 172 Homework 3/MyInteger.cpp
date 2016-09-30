@@ -67,29 +67,29 @@ bool  MyInteger::isPrime(int n)
 	return (test = 1 ? false : true);
 }
 
-bool  MyInteger::isEven(const MyInteger&)
+bool  MyInteger::isEven(const MyInteger&a)
 {
-	if (total % 2 == 0)
+	if (a.total % 2 == 0)
 		return true;
 	else
 		return false;
 }
 
-bool  MyInteger::isOdd(const MyInteger&)
+bool  MyInteger::isOdd(const MyInteger&a)
 {
-	if (total % 2 == 1)
+	if (a.total % 2 == 1)
 		return true;
 	else
 		return false;
 }
 
-bool  MyInteger::isPrime(const MyInteger&)
+bool  MyInteger::isPrime(const MyInteger&a)
 {
-	double max = sqrt(total);
+	double max = sqrt(a.total);
 	int test = 0;
 	for (int i = 2; i <= max; i++)
 	{
-		if (total%i == 0)
+		if (a.total%i == 0)
 		{
 			test = 1;
 			break;
@@ -106,9 +106,9 @@ bool  MyInteger::equals(int n)const
 		return false;
 }
 
-bool  MyInteger::equals(const MyInteger&)const
+bool  MyInteger::equals(const MyInteger& a)const
 {
-	if (value == total)
+	if (a.value == total)
 		return true;
 	else 
 		return false;
